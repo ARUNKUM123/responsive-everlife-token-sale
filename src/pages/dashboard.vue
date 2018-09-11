@@ -7,7 +7,7 @@
           <v-divider></v-divider>
           <v-list class="text--darken-3 grey--text">
             <v-list-tile>
-              <v-list-tile-content class="font-weight-bold text--darken-2 grey--text">{{ user.purchased_ever }} EVER</v-list-tile-content>
+              <v-list-tile-content class="font-weight-bold text--darken-2 grey--text">{{ user.purchased_ever }}_EVER</v-list-tile-content>
             </v-list-tile>
             
            
@@ -20,7 +20,7 @@
           <v-divider></v-divider>
           <v-list class="text--darken-3 grey--text">
             <v-list-tile>
-              <v-list-tile-content class="font-weight-bold text--darken-2 grey--text">{{ user.bonus_ever }} EVER</v-list-tile-content>
+              <v-list-tile-content class="font-weight-bold text--darken-2 grey--text">{{ user.bonus_ever }} _EVER</v-list-tile-content>
             </v-list-tile>
             
            
@@ -33,7 +33,7 @@
           <v-divider></v-divider>
           <v-list class="text--darken-3 grey--text">
             <v-list-tile>
-              <v-list-tile-content class="font-weight-bold text--darken-2 grey--text">{{ user.total_ever }} EVER</v-list-tile-content>
+              <v-list-tile-content class="font-weight-bold text--darken-2 grey--text">{{ user.total_ever }}_EVER</v-list-tile-content>
             </v-list-tile>
             
            
@@ -44,11 +44,22 @@
     </v-layout>
     <v-layout>
         <v-flex class="pa-2">
-        <v-card height="500px" >
+        <v-card class="boxview" height="418px">
+       
           <v-card-title><h4>How it Works</h4></v-card-title>
-          <v-divider></v-divider>
-          
-           <table cellpadding="5"><tr><td style="padding: 10px;">Each token is equivalent to 0.1 USD with estimated crypto conversion listed next to each purchase amount. <BR/> <BR/>Please watch the video to understand how the purchase process works. <BR/>All purchases are subject to a 14 day freeze period. <BR/><BR/> <h3><A href="/contribute">Purchase EVER</a></h3></td><td style="padding: 10px;"> <iframe width="560" height="315" src="https://www.youtube.com/embed/A2DrqxT5M2c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td></tr>
+           <table cellpadding="5"><tr><td style="padding: 10px;padding-bottom: 177px;">
+           
+           Each token is equivalent to 0.1 USD with estimated crypto conversion listed next to each purchase amount. <BR/> <BR/>Please watch the video to understand how the purchase process works. <BR/>All purchases are subject to a 14 day freeze period. <BR/><BR/> 
+           
+           
+          <button data-v-358c3dbb="" type="button" id="purbtn" class="mt-3 v-btn v-btn--large blue darken-2 white--text" style="position: relative; margin-left: 0px;">
+          <div class="v-btn__content">
+      <a href="/contribute" style="color: white;padding: 10px; text-decoration: none;">Purchase EVER</a>
+      </div></button>
+
+        
+            </td><td style="padding: 10px;padding-top: 0px; padding-bottom: 50px; max-width=100%; height: auto !important;"> 
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/A2DrqxT5M2c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td></tr>
              </table>
             
            
@@ -57,7 +68,7 @@
       </v-flex>
       
     </v-layout>
-    <v-layout>
+    <v-layout style=" padding-left: 8px; padding-right: 9px;">
       <payment-table class="mt-5 table" :contributions="user.contributions"></payment-table>
     </v-layout>
   </v-layout>

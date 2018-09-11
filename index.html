@@ -2,90 +2,155 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>everlifeicowebapp</title>
-  <link rel="shortcut icon" href="static/favicon.png">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|PT+Sans|Roboto" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-    crossorigin="anonymous">
-  <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
-  <!-- IDM styles -->
-  <style>
-    #country-section-title,
-    #address-section-title,
-    #personal-section-title,
-    #contact-section-title,
-    .idm-container hr {
-      display: none;
-    }
-
-    #country-section-header,
-    #personal-section-header,
-    #contact-section-header,
-    #address-section-header {
-      margin: 0;
-    }
-
-    #country,
-    #dob_day,
-    #dob_month,
-    #dob_year {
-      padding: 5px;
-    }
-
-    .idm-col-third {
-      padding: 5px !important;
-    }
-
-    #full-name-label {
-      margin: 0;
-    }
-
-    #phone {
-      padding: 9px !important;
-    }
-
-    #next {
-      background-color: #1976d2 !important;
-      color: white !important;
-    }
-
-    #footer-section .idm-row {
-      margin: 20px 0 !important;
-    }
-
-    h4 {
-      color: #0d47a1 !important;
-      font-size: medium !important;
-      margin: 20px 0 2px 0;
-    }
-
-    select option {
-      background-color: white !important;
-      color: black !important;
-    }
-
-    select:focus {
-      background-color: #497dfa !important;
-    }
-
-    .idm-row {
-      margin: 0 !important;
-    }
-
-    p {
-      margin: 5px;
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>everlifeicowebapp</title>
+    <link rel="shortcut icon" href="static/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|PT+Sans|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
+    <!-- IDM styles -->
+    <style>
+        #country-section-title,
+        #address-section-title,
+        #personal-section-title,
+        #contact-section-title,
+        .idm-container hr {
+            display: none;
+        }
+        
+        #country-section-header,
+        #personal-section-header,
+        #contact-section-header,
+        #address-section-header {
+            margin: 0;
+        }
+        
+        #country,
+        #dob_day,
+        #dob_month,
+        #dob_year {
+            padding: 5px;
+        }
+        
+        .idm-col-third {
+            padding: 5px !important;
+        }
+        
+        #full-name-label {
+            margin: 0;
+        }
+        
+        #phone {
+            padding: 9px !important;
+        }
+        
+        #next {
+            background-color: #1976d2 !important;
+            color: white !important;
+        }
+        
+        #footer-section .idm-row {
+            margin: 20px 0 !important;
+        }
+        
+        h4 {
+            color: #0d47a1 !important;
+            font-size: medium !important;
+            /* margin: 20px 0 2px 0; */
+            margin: -2px 0px -7px 0px;
+        }
+        
+        select option {
+            background-color: white !important;
+            color: black !important;
+        }
+        
+        select:focus {
+            background-color: #497dfa !important;
+        }
+        
+        .idm-row {
+            margin: 0 !important;
+        }
+        
+        p {
+            margin: 5px;
+        }
+        
+        @media only screen and (max-width: 375px) {
+            iframe {
+                position: absolute;
+                display: block;
+                right: 7px;
+                height: 62%;
+                top: 252px;
+                max-height: 293px;
+            }
+            .boxview {
+                height: 496px !important;
+            }
+            #purbtn {
+                top: -20px;
+            }
+        }
+        
+        @media only screen and (max-width: 320px) {
+            iframe {
+                margin-left: -268px;
+                /* margin-top: 75px !important; */
+                padding-top: 161px !important;
+            }
+            .boxview {
+                height: 527px !important;
+            }
+            #purbtn {
+                top: -27px;
+            }
+        }
+        
+        @media only screen and (max-width: 1024px) {
+            iframe {
+                margin-top: -64px !important;
+            }
+        }
+        
+        @media only screen and (max-width: 768px) {
+            iframe {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 100px;
+            }
+        }
+        
+        @media only screen and (max-width: 425px) {
+            iframe {
+                position: absolute;
+                display: block;
+                margin-left: -374px;
+                /* padding: 20px;
+                padding-top: 127px; */
+                padding: 31px;
+                padding-top: 124px;
+                right: 18px;
+            }
+            .boxview {
+                height: 463px !important;
+            }
+            #purbtn {
+                top: -15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div id="app"></div>
-  <!-- built files will be auto injected -->
-  <script>
-    var _idm; 
-  </script>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script>
+        var _idm;
+    </script>
 </body>
+
 </html>
