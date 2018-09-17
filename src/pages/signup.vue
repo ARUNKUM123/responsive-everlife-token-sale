@@ -11,20 +11,20 @@
     <v-text-field
       v-model="name"
       :rules="nameRules"
-      :counter="10"
+      :counter="80"
       label="Full Name"
       required
     ></v-text-field>
 
-    <birthdate-picker v-model="birthdate"></birthdate-picker>
+   <!-- <birthdate-picker v-model="birthdate"></birthdate-picker>-->
 
-    <v-layout column class="mt-3">
-      <label>Gender:</label>
+  <!-- <v-layout column class="mt-3">
+     <label>Gender:</label>
       <v-radio-group v-model="gender" row>
         <v-radio label="Male" value="male" ></v-radio>
-        <v-radio label="Female" value="female"></v-radio>
+       <v-radio label="Female" value="female"></v-radio>
       </v-radio-group>
-    </v-layout>
+    </v-layout> -->
 
     <v-text-field
       v-model="password"
@@ -53,12 +53,23 @@
       required
     ></v-text-field>
 
-    <v-checkbox
+    <!-- <v-checkbox 
       v-model="termsCheckbox"
       :rules="[v => !!v || 'You must agree to continue!']"
-      label="Acecept Terms"
-      required
-    ></v-checkbox>
+      label="Accept Terms"
+      required>
+  
+      </v-checkbox> -->
+
+  <v-checkbox v-model="accepted" light>
+      v-model="termsCheckbox"
+      :rules="[v => !!v || 'You must agree to continue!']"
+        <template slot="label">
+         <a @click.stop href="https://everlife.ai/terms.htm" target="_blank"> Accept Terms</a>
+        </template> required
+      </v-checkbox>
+
+
     <v-layout justify-center>
       <vue-recaptcha sitekey="6LdfOmgUAAAAAK5Y9Q6TcrIeHVFyw97A9ijOlxvf" v-on:verify="captchaResponse" class="mt-5"></vue-recaptcha>
     </v-layout>
@@ -86,8 +97,8 @@ export default {
     valid: false,
     name: "",
     nameRules: [
-      v => !!v || "Name is required"
-      // v => (v && v.length <= 10) || "Name must be less than 10 characters"
+      v => !!v || "Name is required",
+       v => (v && v.length <= 80) || "Name must be less than 80 characters"
     ],
     email: "",
     emailRules: [
